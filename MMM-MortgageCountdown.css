@@ -1,0 +1,46 @@
+/* General module styling */
+.MMM-MortgageCountdown {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    text-align: left;
+}
+
+/* Styling for the table layout */
+.mortgage-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Title row styling */
+.mortgage-table .title {
+    font-size: 24px; /* Match font size */
+    font-weight: normal; /* No bold */
+    text-align: left;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);  /* Softer, more subtle border */
+    margin-bottom: 10px;
+}
+
+/* Row styling */
+.mortgage-table td {
+    padding: 3px;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+/* Color styles for the number values */
+.red-text {
+    color: red !important;
+    font-weight: normal;
+}
+
+.yellow-text {
+    color: yellow !important;
+    font-weight: normal;
+}
+
+.green-text {
+    color: green !important;
+    font-weight: normal;
+}
