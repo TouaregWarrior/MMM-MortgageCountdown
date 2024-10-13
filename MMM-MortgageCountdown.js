@@ -130,13 +130,11 @@ Module.register("MMM-MortgageCountdown", {
         }
 
         const aheadColorClass = this.scheduleStatus === "ahead" ? "green-text" : "red-text";
-        let scheduleText = "";
 
-        if (this.scheduleStatus === "ahead") {
-            scheduleText = `Months ahead of schedule: <span class="${aheadColorClass}">${this.monthsAhead}</span>`;
-        } else {
-            scheduleText = `Months behind schedule: <span class="${aheadColorClass}">${this.monthsAhead}</span>`;
-        }
+        // Update the wording to reflect whether ahead or behind
+        let scheduleLabel = this.scheduleStatus === "ahead" 
+            ? "Months mortgage reduced by:" 
+            : "Months mortgage increased by:";
 
         wrapper.innerHTML = `
             <table class="mortgage-table">
@@ -157,7 +155,7 @@ Module.register("MMM-MortgageCountdown", {
                     <td class="${switchColorClass}">${monthsToNextSwitch}</td>
                 </tr>
                 <tr>
-                    <td>${this.scheduleStatus === "ahead" ? "Months ahead of schedule:" : "Months behind schedule:"}</td>
+                    <td>${scheduleLabel}</td>
                     <td style="width: 20px;"></td>
                     <td class="${aheadColorClass}">${this.monthsAhead}</td>
                 </tr>
