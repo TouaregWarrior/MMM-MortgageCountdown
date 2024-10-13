@@ -3,7 +3,7 @@ Module.register("MMM-MortgageCountdown", {
         lastPaymentDate: "2030-01-01",   // Anticipated last mortgage payment date
         nextSwitchDate: "2026-04-01",    // Next deal switch date
         originalCompletionDate: "2032-01-01",  // Original mortgage completion date
-        updateInterval: 1000 * 60 * 60 * 24    // Update every 24 hours
+        updateInterval: 1000 * 60 * 15    // Update every 15 minutes (in milliseconds)
     },
 
     getStyles: function () {
@@ -27,7 +27,16 @@ Module.register("MMM-MortgageCountdown", {
         this.calculateTimeRemaining();
         this.calculateSwitchTimeRemaining();
         this.calculateMonthsAhead();
-        this.scheduleUpdate();
+        this.updateDom();
+
+        // Schedule periodic updates every updateInterval (24 hours by default)
+        var self = this;
+        setInterval(function () {
+            self.calculateTimeRemaining();
+            self.calculateSwitchTimeRemaining();
+            self.calculateMonthsAhead();
+            self.updateDom(); // Re-render the module
+        }, this.config.updateInterval);
     },
 
     calculateTimeRemaining: function () {
