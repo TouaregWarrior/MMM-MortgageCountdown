@@ -3,7 +3,7 @@ Module.register("MMM-MortgageCountdown", {
         lastPaymentDate: "2030-01-01",   // Anticipated last mortgage payment date
         nextSwitchDate: "2026-04-01",    // Next deal switch date
         originalCompletionDate: "2032-01-01",  // Original mortgage completion date
-        updateInterval: 1000 * 60 * 15    // Update every 15 minutes (in milliseconds)
+        updateInterval: 1000 * 60 * 15    // Update every 15 mins (in milliseconds)
     },
 
     getStyles: function () {
@@ -133,8 +133,8 @@ Module.register("MMM-MortgageCountdown", {
 
         // Update the wording to reflect whether ahead or behind
         let scheduleLabel = this.scheduleStatus === "ahead" 
-            ? "Months mortgage reduced by:" 
-            : "Months mortgage increased by:";
+            ? "Paying off early by (months):" 
+            : "Payoff behind by (months):";
 
         wrapper.innerHTML = `
             <table class="mortgage-table">
