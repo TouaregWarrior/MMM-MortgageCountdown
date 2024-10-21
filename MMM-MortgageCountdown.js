@@ -1,3 +1,13 @@
+//MMM-MortgageCountdown.js:
+
+/* Magic Mirror
+ * Module: MMM-MortgageCountdown
+ *
+ * By TouaregWarrior
+ * MIT Licensed.
+ */
+
+
 Module.register("MMM-MortgageCountdown", {
     defaults: {
         lastPaymentDate: "2030-01-01",   // Anticipated last mortgage payment date
