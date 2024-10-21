@@ -1,0 +1,12 @@
+{
+  "name": "MMM-MortgageCountdown",
+  "version": "1.0.0",
+  "description": "A MagicMirror² module to count the number of months until your last mortgage payment.",
+  "keywords": [
+    "MagicMirror",
+    "mortage",
+    "finance",
+    "countdown"
+  ],
+  "license": "MIT"
+}
