@@ -149,12 +149,6 @@ Module.register("MMM-MortgageCountdown", {
         wrapper.innerHTML = `
             <table class="mortgage-table">
                 <tr>
-                    <td colspan="3" class="title">Mortgage Progress</td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="divider"></td>
-                </tr>
-                <tr>
                     <td>Payments remaining:</td>
                     <td style="width: 20px;"></td>
                     <td class="${paymentsColorClass}">${this.totalMonthsRemaining}</td>
