@@ -1,12 +1,27 @@
 {
-  "name": "MMM-MortgageCountdown",
-  "version": "1.0.0",
-  "description": "A MagicMirror² module to count the number of months until your last mortgage payment.",
-  "keywords": [
-    "MagicMirror",
-    "mortage",
-    "finance",
-    "countdown"
-  ],
-  "license": "MIT"
+	"name": "MMM-MortgageCountdown",
+	"version": "1.0.0",
+	"description": "A MagicMirror² module to count the number of months until your last mortgage payment.",
+	"main": "MMM-MortgageCountdown.js",
+	"keywords": [
+	    "Mortgage",
+	    "house"
+	],
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TouaregWarrior/MMM-MortgageCountdown"
+	},
+	"author": "TouaregWarrior",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/TouaregWarrior/MMM-MortgageCountdown/issues"
+	},
+	"homepage": "https://github.com/TouaregWarrior/MMM-MortgageCountdown",
+	"dependencies": {
+		"request": "^2.78.0"
+	},
+	"devDependencies": {}
 }
