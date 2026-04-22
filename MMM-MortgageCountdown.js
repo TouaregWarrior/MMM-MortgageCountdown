@@ -1,6 +1,6 @@
 //MMM-MortgageCountdown.js:
 
-/* Magic Mirror
+/* MagicMirror²
  * Module: MMM-MortgageCountdown
  *
  * By TouaregWarrior
