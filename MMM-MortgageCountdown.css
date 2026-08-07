@@ -1,36 +1,269 @@
-/* General module styling */
-.MMM-MortgageCountdown {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 300;
-    width: 100%;
-    text-align: left;
+:root {
+  --color-text: #999;
+  --color-text-dimmed: #666;
+  --color-text-bright: #fff;
+  --color-background: #000;
+  --font-primary: "Roboto Condensed";
+  --font-secondary: "Roboto";
+  --font-size: 20px;
+  --font-size-xsmall: 0.75rem;
+  --font-size-small: 1rem;
+  --font-size-medium: 1.5rem;
+  --font-size-large: 3.25rem;
+  --font-size-xlarge: 3.75rem;
+  --gap-body-top: 60px;
+  --gap-body-right: 60px;
+  --gap-body-bottom: 60px;
+  --gap-body-left: 60px;
+  --gap-modules: 30px;
 }
 
-/* Styling for the table layout */
-.mortgage-table {
-    width: 100%;
-    border-collapse: collapse;
+html {
+  cursor: none;
+  overflow: hidden;
+  background: var(--color-background);
+  user-select: none;
+  font-size: var(--font-size);
 }
 
-/* Row styling */
-.mortgage-table td {
-    padding: 3px;
-    font-size: 20px;
-    line-height: 1.2;
+::-webkit-scrollbar {
+  display: none;
 }
 
-/* Color styles for the number values */
-.red-text {
-    color: red !important;
-    font-weight: normal;
+body {
+  margin: var(--gap-body-top) var(--gap-body-right) var(--gap-body-bottom) var(--gap-body-left);
+  position: absolute;
+  height: calc(100% - var(--gap-body-top) - var(--gap-body-bottom));
+  width: calc(100% - var(--gap-body-right) - var(--gap-body-left));
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-primary), sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-.yellow-text {
-    color: yellow !important;
-    font-weight: normal;
+/* Default styles */
+.dimmed {
+  color: var(--color-text-dimmed);
 }
 
-.green-text {
-    color: green !important;
-    font-weight: normal;
+.normal {
+  color: var(--color-text);
+}
+
+.bright {
+  color: var(--color-text-bright);
+}
+
+.xsmall {
+  font-size: var(--font-size-xsmall);
+  line-height: 1.275;
+}
+
+.small {
+  font-size: var(--font-size-small);
+  line-height: 1.25;
+}
+
+.medium {
+  font-size: var(--font-size-medium);
+  line-height: 1.225;
+}
+
+.large {
+  font-size: var(--font-size-large);
+  line-height: 1;
+}
+
+.xlarge {
+  font-size: var(--font-size-xlarge);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.thin {
+  font-family: var(--font-secondary), sans-serif;
+  font-weight: 100;
+}
+
+.light {
+  font-family: var(--font-primary), sans-serif;
+  font-weight: 300;
+}
+
+.regular {
+  font-family: var(--font-primary), sans-serif;
+  font-weight: 400;
+}
+
+.bold {
+  font-family: var(--font-primary), sans-serif;
+  font-weight: 700;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+header {
+  text-transform: uppercase;
+  font-size: var(--font-size-xsmall);
+  font-family: var(--font-primary), Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-text-dimmed);
+  line-height: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+sup {
+  font-size: 50%;
+  line-height: 50%;
+}
+
+/* Module styles */
+.module {
+  margin-bottom: var(--gap-modules);
+}
+
+.module.hidden {
+  pointer-events: none;
+}
+
+.module:not(.hidden) {
+  pointer-events: auto;
+}
+
+.region.bottom .module {
+  margin-top: var(--gap-modules);
+  margin-bottom: 0;
+}
+
+.no-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pre-line {
+  white-space: pre-line;
+}
+
+/* Region Definitions */
+.region {
+  position: absolute;
+}
+
+.region.fullscreen {
+  position: absolute;
+  inset: calc(-1 * var(--gap-body-top)) calc(-1 * var(--gap-body-right)) calc(-1 * var(--gap-body-bottom)) calc(-1 * var(--gap-body-left));
+  pointer-events: none;
+}
+
+.region.right {
+  right: 0;
+  text-align: right;
+}
+
+.region.top {
+  top: 0;
+}
+
+/* Top left panel */
+.region.top.left {
+  width: calc((100vw / 4) - 50px);
+  left: 0;
+  top: 0;
+  text-align: left;
+}
+
+.region.top.right {
+  width: calc((100vw / 4) - 50px); 
+  right: 0;
+  text-align: right;
+}
+
+.region.top.center {
+  width: calc((100vw / 2) - 140px);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+}
+
+.region.bottom {
+  bottom: 0;
+}
+
+.region.bottom.right {
+  width: calc((100vw / 3) - 50px);
+  right: 0;
+  bottom: 110px; /* Raised by another 10px */
+  text-align: left;
+}
+
+.region.bottom.center {
+  width: calc((100vw / 3) - 50px);
+  left: 50%;
+  bottom: 110px; /* Raised by another 10px */
+  transform: translateX(-50%);
+  text-align: left;
+}
+
+.region.bottom.left {
+  width: calc((100vw / 3) - 50px);
+  left: 0;
+  bottom: 110px; /* Raised by another 10px */
+  text-align: left;
+}
+
+/* Font style for bottom and top center regions */
+.region.bottom.left,
+.region.bottom.center,
+.region.bottom.right,
+.region.top.center {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  color: var(--color-text);  /* Ensures the text color remains consistent */
+}
+
+.region.bar {
+  width: 100%;
+  text-align: center;  /* Ensure the bottom bar content is centered */
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}
+
+.region.third,
+.region.middle.center {
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.region.upper.third {
+  top: 33%;
+}
+
+.region.middle.center {
+  top: 50%;
+}
+
+.region.lower.third {
+  top: 66%;
+}
+
+.region.left {
+  text-align: left;
+}
+
+.region table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
 }

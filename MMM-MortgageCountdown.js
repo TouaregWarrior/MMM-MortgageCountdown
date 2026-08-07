@@ -1,6 +1,6 @@
 //MMM-MortgageCountdown.js:
 
-/* MagicMirror²
+/* Magic Mirror
  * Module: MMM-MortgageCountdown
  *
  * By TouaregWarrior
@@ -120,7 +120,7 @@ Module.register("MMM-MortgageCountdown", {
     getDom: function () {
         const wrapper = document.createElement("div");
 
-        let paymentsColorClass = "";
+        let paymentsColorClass;
         if (this.totalMonthsRemaining > 100) {
             paymentsColorClass = "red-text";
         } else if (this.totalMonthsRemaining >= 50 && this.totalMonthsRemaining <= 99) {
@@ -130,7 +130,7 @@ Module.register("MMM-MortgageCountdown", {
         }
 
         const monthsToNextSwitch = this.switchYearsRemaining * 12 + this.switchMonthsRemaining;
-        let switchColorClass = "";
+        let switchColorClass;
         if (monthsToNextSwitch < 6) {
             switchColorClass = "red-text";
         } else if (monthsToNextSwitch >= 7 && monthsToNextSwitch <= 12) {
